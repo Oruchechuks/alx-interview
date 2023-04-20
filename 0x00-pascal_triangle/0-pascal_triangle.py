@@ -1,16 +1,23 @@
 #!/usr/bin/python3
 """
-0-main
+Module 0-pascal_triangle
 """
-pascal_triangle = __import__('0-pascal_triangle').pascal_triangle
 
-def print_triangle(triangle):
+
+def pascal_triangle(n):
     """
-    Print the triangle
+    Returns pascal's trangle(list of lists of integers)
+    or an empty list if n <= 0
     """
-    for row in triangle:
-        print("[{}]".format(",".join([str(x) for x in row])))
+    if n <= 0:
+        return []
 
-
-if __name__ == "__main__":
-    print_triangle(pascal_triangle(5))
+    triangles = [[1]]
+    while len(triangles) != n:
+        tri = triangles[-1]
+        tmp = [1]
+        for i in range(len(tri) - 1):
+            tmp.append(tri[i] + tri[i + 1])
+        tmp.append(1)
+        triangles.append(tmp)
+    return triangles

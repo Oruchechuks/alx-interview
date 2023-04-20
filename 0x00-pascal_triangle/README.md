@@ -1,1 +1,1 @@
-this is a pascal triangle task
+## Python Pascal's triangle
