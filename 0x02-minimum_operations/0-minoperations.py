@@ -12,11 +12,14 @@
 
 
 def minOperations(n):
-    nOpe = 0
-    minOpe = 2
-    while n > 1:
-        while n % minOpe == 0:
-            nOpe += minOpe
-            n /= minOpe
-        minOpe += 1
-    return nOpei
+    if n == 1:
+        return 0
+
+    min_ops = float('inf')
+    for d in range(2, n+1):
+        if n % d == 0:
+            ops = d + minOperations(n // d)
+            min_ops = min(min_ops, ops)
+
+    return min_ops
+
