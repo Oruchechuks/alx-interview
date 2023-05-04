@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """
     The letter H is the only character in a text file.
     There are only two operations that your text editor can do on 
@@ -9,8 +7,6 @@
     the least amount of processes necessary to produce exactly 
 	n H characters in the file.
 """
-
-
 def minOperations(n):
     if n == 1:
         return 0
